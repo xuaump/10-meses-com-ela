@@ -1,0 +1,100 @@
+/* Resetando algumas configurações padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definindo o layout e as fontes */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    background-color: #f2a1c6;
+    padding: 20px;
+    color: white;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+}
+
+h2 {
+    color: #f2a1c6;
+}
+
+.fotos .nossasfotos{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.fotos img {
+    max-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    color: #666;
+}
+/* Estilos básicos */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f0f8;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 50px;
+}
+
+.titulo {
+    font-size: 36px;
+    color: #ff80bf;
+    font-weight: bold;
+}
+
+.mensagem {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.botao-surpresa {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ff80bf;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.botao-surpresa:hover {
+    background-color: #ff66a1;
+    transform: scale(1.1);
+}
+
+.botao-surpresa:active {
+    transform: scale(0.95);
+}
