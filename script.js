@@ -2,31 +2,40 @@
 window.onload = function() {
     alert("Oii, nenémmm, Bem-vinda ao nosso site! 🎉");
     
-    // Contagem regressiva para o próximo aniversário 
-    const countdownDate = new Date("june 12, 2025").getTime();
-    const countdownElement = document.createElement('div');
-    countdownElement.style.textAlign = "center";
-    countdownElement.style.fontSize = "1.5rem";
-    countdownElement.style.marginTop = "20px";
-    document.body.appendChild(countdownElement);
+// Contagem regressiva para o próximo aniversário 
+const countdownDate = new Date("June 12, 2025 00:00:00").getTime();
 
-    setInterval(function() {
-        let now = new Date().getTime();
-        let distance = countdownDate - now;
+const countdownElement = document.createElement('div');
+countdownElement.style.textAlign = "center";
+countdownElement.style.fontSize = "1.5rem";
+countdownElement.style.marginTop = "20px";
+countdownElement.style.fontFamily = "sans-serif";
+countdownElement.style.backgroundColor = "#fff0f5";
+countdownElement.style.color = "#ff69b4";
+countdownElement.style.padding = "20px";
+countdownElement.style.borderRadius = "15px";
+countdownElement.style.boxShadow = "0 0 15px #ffc0cb90";
+document.body.appendChild(countdownElement);
 
-        // Cálculo de dias, horas, minutos e segundos
-        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+function updateCountdown() {
+    let now = new Date().getTime();
+    let distance = countdownDate - now;
 
-        // a contagem regressiva
-        countdownElement.innerHTML = `Faltam ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos para o nosso aniversário!`;
+    if (distance <= 0) {
+        countdownElement.innerHTML = "🎉 O grande dia chegou! Vamos comemorar! 🎉";
+        return;
+    }
 
-        // Quando a contagem regressiva terminar
-        if (distance < 0) {
-            clearInterval(x);
-            countdownElement.innerHTML = "Feliz Nosso Aniversário! 🎉";
-        }
-    }, 1000);
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    countdownElement.innerHTML = `💖 Faltam <strong>${days}</strong> dias, 
+    <strong>${hours}</strong> horas, <strong>${minutes}</strong> min e 
+    <strong>${seconds}</strong> seg 💖<br>para o nosso aniversário, minha princesa! 🎂🎈`;
+}
+
+updateCountdown(); // mostra imediatamente
+setInterval(updateCountdown, 1000);
 };
